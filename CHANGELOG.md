@@ -1,59 +1,59 @@
 # Changelog
 
-All notable changes to this template kit will be documented here.
+Todas as mudanças relevantes deste kit de templates serão documentadas aqui.
 
-Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-Versions follow [Semantic Versioning](https://semver.org/): `MAJOR.MINOR.PATCH`
-— `MAJOR` breaking changes · `MINOR` new features · `PATCH` fixes.
+Formato baseado em [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Versões seguem [Versionamento Semântico](https://semver.org/): `MAJOR.MINOR.PATCH`
+— `MAJOR` mudanças que quebram compatibilidade · `MINOR` novas funcionalidades · `PATCH` correções.
 
 ---
 
-## [Unreleased]
+## [Não lançado]
 
-> Changes staged for the next release go here.
+> Mudanças prontas para a próxima versão entram aqui.
 
 ---
 
 ## [1.1.0] — 2026-06-19
 
-### Added
+### Adicionado
 
-- `IMPLEMENTATION_PLAN.md` (renamed from `implementation_plan.md`): metadata table (status, version, date, owner), scope section (in/out), phase roadmap table with effort and dependencies, risks and mitigations table, Definition of Done checklist, and a quality verification table (Performance, Accessibility, SEO, Security).
-- `README.md`: sections for Demo, Tests, Troubleshooting (collapsible `<details>`), Roadmap, Contributing, and License. Added CI badge placeholder and cross-references to `.agent/rules/GEMINI.md`.
-- `GEMINI.md` (root): canonical note marking it as single source of truth for global rules; cross-reference to `.agent/rules/GEMINI.md` added to References block.
-- `.agent/rules/GEMINI.md`: cross-reference back to root `GEMINI.md` for Language and Clean Code rules.
+- `IMPLEMENTATION_PLAN.md` (renomeado de `implementation_plan.md`): tabela de metadados (status, versão, data, responsável), seção de escopo (dentro/fora), tabela de roadmap de fases com esforço e dependências, tabela de riscos e mitigações, checklist de Critérios de Conclusão e tabela de verificação de qualidade (Performance, Acessibilidade, SEO, Segurança).
+- `README.md`: seções de Demonstração, Testes, Troubleshooting (com `<details>` recolhível), Roadmap, Contribuição e Licença. Adicionado placeholder de badge de CI e referência cruzada para `.agent/rules/GEMINI.md`.
+- `GEMINI.md` (raiz): nota canônica marcando-o como fonte única de verdade para regras globais; referência cruzada para `.agent/rules/GEMINI.md` adicionada ao bloco de Referências.
+- `.agent/rules/GEMINI.md`: referência cruzada de volta para o `GEMINI.md` raiz nas seções de Idioma e Clean Code.
 
-### Changed
+### Alterado
 
-- `implementation_plan.md` renamed to `IMPLEMENTATION_PLAN.md` to match the uppercase convention of all root-level docs (`CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, etc.).
-- `IMPLEMENTATION_PLAN.md`: all remaining English headings translated to Portuguese (`Proposed Changes` → `Plano de Execução`, `Verification Plan` → `Plano de Verificação`, `[NEW]` → `[NOVO]`, `Definition of Done` → `Critérios de Conclusão`).
-- `.agent/rules/GEMINI.md`: Language and Clean Code sections now defer to root `GEMINI.md` instead of duplicating the rules.
+- `implementation_plan.md` renomeado para `IMPLEMENTATION_PLAN.md` para seguir a convenção de maiúsculas dos demais docs raiz (`CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, etc.).
+- `IMPLEMENTATION_PLAN.md`: títulos restantes em inglês traduzidos para português (`Proposed Changes` → `Plano de Execução`, `Verification Plan` → `Plano de Verificação`, `[NEW]` → `[NOVO]`, `Definition of Done` → `Critérios de Conclusão`).
+- `.agent/rules/GEMINI.md`: seções de Idioma e Clean Code passaram a referenciar o `GEMINI.md` raiz em vez de duplicar as regras.
 
-### Fixed
+### Corrigido
 
-- `.agent/agents/backend-specialist.md`: removed non-existent skills `python-patterns`, `rust-pro`, `powershell-windows`.
-- `.agent/agents/devops-engineer.md`: removed non-existent skills `server-management`, `powershell-windows`.
-- `.agent/agents/orchestrator.md`: removed non-existent skill `powershell-windows`.
-- `.agent/agents/security-auditor.md`: removed non-existent skill `red-team-tactics`.
-- `.agent/agents/test-engineer.md`: removed non-existent skill `tdd-workflow`.
-- `.agent/agents/debugger.md`: added missing `tools` and `model` fields (only agent without them).
-- `.agent/agents/explorer-agent.md`: replaced non-existent Claude Code tools `ViewCodeItem` and `FindByName` with `Read, Grep, Glob, Bash`.
-- `.agent/skills/nextjs-react-expert/SKILL.md`: corrected `name` field from `react-best-practices` to `nextjs-react-expert` to match directory name.
-- `.agent/workflows/caveman.md`: merged duplicate YAML frontmatter blocks into one valid block.
-- `.agent/rules/GEMINI.md`: removed `game-developer` from Quick Reference (agent does not exist in the kit); removed phantom scripts `dependency_analyzer.py` and `bundle_analyzer.py`; added 6 real scripts missing from the table (`api_validator.py`, `type_coverage.py`, `geo_checker.py`, `i18n_checker.py`, `react_performance_checker.py`, `convert_rules.py`); updated total count from 12 to 16.
+- `.agent/agents/backend-specialist.md`: removidas skills inexistentes `python-patterns`, `rust-pro`, `powershell-windows`.
+- `.agent/agents/devops-engineer.md`: removidas skills inexistentes `server-management`, `powershell-windows`.
+- `.agent/agents/orchestrator.md`: removida skill inexistente `powershell-windows`.
+- `.agent/agents/security-auditor.md`: removida skill inexistente `red-team-tactics`.
+- `.agent/agents/test-engineer.md`: removida skill inexistente `tdd-workflow`.
+- `.agent/agents/debugger.md`: adicionados campos `tools` e `model` ausentes (único agente sem eles).
+- `.agent/agents/explorer-agent.md`: substituídas ferramentas inexistentes no Claude Code (`ViewCodeItem`, `FindByName`) por `Read, Grep, Glob, Bash`.
+- `.agent/skills/nextjs-react-expert/SKILL.md`: campo `name` corrigido de `react-best-practices` para `nextjs-react-expert`, alinhando com o nome do diretório.
+- `.agent/workflows/caveman.md`: dois blocos de frontmatter YAML duplicados fundidos em um único bloco válido.
+- `.agent/rules/GEMINI.md`: removido `game-developer` do Quick Reference (agente não existe no kit); removidos scripts fantasmas `dependency_analyzer.py` e `bundle_analyzer.py`; adicionados 6 scripts reais que estavam faltando (`api_validator.py`, `type_coverage.py`, `geo_checker.py`, `i18n_checker.py`, `react_performance_checker.py`, `convert_rules.py`); total atualizado de 12 para 16.
 
 ---
 
 ## [1.0.0] — 2026-06-19
 
-### Added
+### Adicionado
 
-- Initial release of the AI documentation template kit.
-- Root docs: `README.md`, `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `IMPLEMENTATION_GUIDE.md`, `implementation_plan.md`, `.env.example`, `.mcp.json`.
-- Agent kit in `.agent/`: 15 specialist agents, 30 modular skills, 12 workflows, shared MCP tools, validation scripts, and architecture documentation.
+- Lançamento inicial do kit de templates de documentação com IA.
+- Docs raiz: `README.md`, `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `IMPLEMENTATION_GUIDE.md`, `implementation_plan.md`, `.env.example`, `.mcp.json`.
+- Kit de agentes em `.agent/`: 15 agentes especialistas, 30 skills modulares, 12 workflows, ferramentas MCP compartilhadas, scripts de validação e documentação de arquitetura.
 
 ---
 
-[Unreleased]: https://github.com/{seu-usuario}/{nome-do-repo}/compare/v1.1.0...HEAD
+[Não lançado]: https://github.com/{seu-usuario}/{nome-do-repo}/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/{seu-usuario}/{nome-do-repo}/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/{seu-usuario}/{nome-do-repo}/releases/tag/v1.0.0
