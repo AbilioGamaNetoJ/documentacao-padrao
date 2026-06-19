@@ -14,7 +14,7 @@ Versões seguem [Versionamento Semântico](https://semver.org/): `MAJOR.MINOR.PA
 
 ---
 
-## [1.1.0] — 2026-06-19
+## [1.1.0] — 19/06/2026
 
 ### Adicionado
 
@@ -44,7 +44,7 @@ Versões seguem [Versionamento Semântico](https://semver.org/): `MAJOR.MINOR.PA
 
 ---
 
-## [1.0.0] — 2026-06-19
+## [1.0.0] — 19/06/2026
 
 ### Adicionado
 
