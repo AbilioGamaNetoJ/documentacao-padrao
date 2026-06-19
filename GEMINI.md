@@ -128,6 +128,8 @@ Apply rules → Execute task
 
 ## GLOBAL BEHAVIOR RULES
 
+> These are the **canonical global rules** (single source of truth). The operational behavior engine — request classifier, intelligent agent routing, TIER protocol, Socratic Gate and the script checklist — lives in [`.agent/rules/GEMINI.md`](./.agent/rules/GEMINI.md) and defers to the rules below for language and clean code.
+
 ### Language
 
 <!-- CUSTOMIZE: Set YOUR language preferences -->
@@ -268,4 +270,5 @@ Before considering a task complete:
 > - Agent system: [AGENTS.md](./AGENTS.md)
 > - Claude Code instructions: [CLAUDE.md](./CLAUDE.md)
 > - Implementation guide: [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md)
+> - Behavior engine (routing, TIERs, gates): [.agent/rules/GEMINI.md](./.agent/rules/GEMINI.md)
 > - Kit architecture: [.agent/ARCHITECTURE.md](./.agent/ARCHITECTURE.md)

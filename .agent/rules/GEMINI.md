@@ -95,19 +95,16 @@ When auto-applying an agent, inform the user:
 
 ## TIER 0: UNIVERSAL RULES (Always Active)
 
-### 🌐 Language Handling
+### 🌐 Language
 
-When user's prompt is NOT in English:
-
-1. **Internally translate** for better comprehension
-2. **Respond in user's language** - match their communication
-3. **Code comments/variables** remain in English
+> **Single source of truth:** the **Language** rules in the root [`/GEMINI.md`](../../GEMINI.md) → *Global Behavior Rules*. Follow the project's configured response language; code, variables and comments always in English.
 
 ### 🧹 Clean Code (Global Mandatory)
 
-**ALL code MUST follow `@[skills/clean-code]` rules. No exceptions.**
+> Project coding standards live in the root [`/GEMINI.md`](../../GEMINI.md) → *Clean Code*. **ALL code MUST follow `@[skills/clean-code]` — no exceptions.**
 
-- **Code**: Concise, direct, no over-engineering. Self-documenting.
+On top of those baseline standards, this kit enforces:
+
 - **Testing**: Mandatory. Pyramid (Unit > Int > E2E) + AAA Pattern.
 - **Performance**: Measure first. Adhere to 2025 standards (Core Web Vitals).
 - **Infra/Safety**: 5-Phase Deployment. Verify secrets security.
@@ -198,22 +195,26 @@ When user's prompt is NOT in English:
 - **Completion:** A task is NOT finished until `checklist.py` returns success.
 - **Reporting:** If it fails, fix the **Critical** blockers first (Security/Lint).
 
-**Available Scripts (12 total):**
+**Available Scripts (16 total):**
 
-| Script                     | Skill                 | When to Use         |
-| -------------------------- | --------------------- | ------------------- |
-| `security_scan.py`         | vulnerability-scanner | Always on deploy    |
-| `dependency_analyzer.py`   | vulnerability-scanner | Weekly / Deploy     |
-| `lint_runner.py`           | lint-and-validate     | Every code change   |
-| `test_runner.py`           | testing-patterns      | After logic change  |
-| `schema_validator.py`      | database-design       | After DB change     |
-| `ux_audit.py`              | frontend-design       | After UI change     |
-| `accessibility_checker.py` | frontend-design       | After UI change     |
-| `seo_checker.py`           | seo-fundamentals      | After page change   |
-| `bundle_analyzer.py`       | performance-profiling | Before deploy       |
-| `mobile_audit.py`          | mobile-design         | After mobile change |
-| `lighthouse_audit.py`      | performance-profiling | Before deploy       |
-| `playwright_runner.py`     | webapp-testing        | Before deploy       |
+| Script                        | Skill                  | When to Use           |
+| ----------------------------- | ---------------------- | --------------------- |
+| `security_scan.py`            | vulnerability-scanner  | Always on deploy      |
+| `lint_runner.py`              | lint-and-validate      | Every code change     |
+| `type_coverage.py`            | lint-and-validate      | Every code change     |
+| `test_runner.py`              | testing-patterns       | After logic change    |
+| `schema_validator.py`         | database-design        | After DB change       |
+| `api_validator.py`            | api-patterns           | After API change      |
+| `ux_audit.py`                 | frontend-design        | After UI change       |
+| `accessibility_checker.py`    | frontend-design        | After UI change       |
+| `react_performance_checker.py`| nextjs-react-expert    | After component change|
+| `seo_checker.py`              | seo-fundamentals       | After page change     |
+| `geo_checker.py`              | geo-fundamentals       | After content change  |
+| `lighthouse_audit.py`         | performance-profiling  | Before deploy         |
+| `mobile_audit.py`             | mobile-design          | After mobile change   |
+| `playwright_runner.py`        | webapp-testing         | Before deploy         |
+| `i18n_checker.py`             | i18n-localization      | After i18n change     |
+| `convert_rules.py`            | nextjs-react-expert    | Rule migration        |
 
 > 🔴 **Agents & Skills can invoke ANY script** via `python .agent/skills/<skill>/scripts/<script>.py`
 
@@ -260,14 +261,15 @@ When user's prompt is NOT in English:
 
 ### Agents & Skills
 
-- **Masters**: `orchestrator`, `project-planner`, `security-auditor` (Cyber/Audit), `backend-specialist` (API/DB), `frontend-specialist` (UI/UX), `mobile-developer`, `debugger`, `game-developer`
+- **Masters**: `orchestrator`, `project-planner`, `security-auditor` (Cyber/Audit), `backend-specialist` (API/DB), `frontend-specialist` (UI/UX), `mobile-developer`, `debugger`
 - **Key Skills**: `clean-code`, `brainstorming`, `app-builder`, `frontend-design`, `mobile-design`, `plan-writing`, `behavioral-modes`
 
 ### Key Scripts
 
 - **Verify**: `.agent/scripts/verify_all.py`, `.agent/scripts/checklist.py`
-- **Scanners**: `security_scan.py`, `dependency_analyzer.py`
-- **Audits**: `ux_audit.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`
+- **Scanners**: `security_scan.py`, `api_validator.py`, `type_coverage.py`
+- **Audits**: `ux_audit.py`, `accessibility_checker.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`, `geo_checker.py`, `react_performance_checker.py`
 - **Test**: `playwright_runner.py`, `test_runner.py`
+- **Utils**: `i18n_checker.py`, `schema_validator.py`, `convert_rules.py`
 
 ---
