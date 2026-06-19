@@ -1,6 +1,15 @@
 # {NOME_DO_PROJETO} — Plano de Implementação
 
 <!-- Este é um template. A IA deve preencher este documento com base nas decisões do projeto. -->
+<!-- As fases abaixo são um esqueleto comum de app full-stack. Remova as que não se aplicam -->
+<!-- (ex.: sem auth, sem pagamentos) e adapte a stack à decisão do projeto. -->
+
+| Campo | Valor |
+|---|---|
+| **Status** | <!-- 🟡 Planejamento / 🔵 Em execução / 🟢 Concluído --> |
+| **Versão do plano** | <!-- e.g. v1 --> |
+| **Última atualização** | <!-- AAAA-MM-DD --> |
+| **Responsável** | <!-- nome / IA --> |
 
 ## Visão Geral
 
@@ -9,6 +18,22 @@
 
 1. **{ÁREA_1}** — Descrição do que esta área faz
 2. **{ÁREA_2}** — Descrição do que esta área faz
+
+---
+
+## Escopo
+
+### ✅ Dentro do escopo
+
+<!-- CUSTOMIZE: Liste objetivamente o que SERÁ entregue -->
+- Item 1
+- Item 2
+
+### 🚫 Fora do escopo
+
+<!-- CUSTOMIZE: Liste o que NÃO será feito agora — evita scope creep -->
+- Item que ficará para depois
+- Item que não faz parte desta entrega
 
 ---
 
@@ -67,11 +92,42 @@
 
 ---
 
-## Proposed Changes
+## Roadmap de Fases
+
+<!-- CUSTOMIZE: Marque o progresso, ajuste a ordem e remova fases que não se aplicam. -->
+<!-- A coluna "Depende de" deixa explícita a ordem de execução. -->
+
+| # | Fase | Esforço | Depende de | Status |
+|---|---|---|---|:---:|
+| 1 | Inicialização do Projeto | <!-- P/M/G --> | — | ⬜ |
+| 2 | Schema do Banco de Dados | <!-- P/M/G --> | Fase 1 | ⬜ |
+| 3 | Autenticação e Autorização | <!-- P/M/G --> | Fase 2 | ⬜ |
+| 4 | Interface Pública | <!-- P/M/G --> | Fase 2 | ⬜ |
+| 5 | Fluxo Principal | <!-- P/M/G --> | Fase 3, 4 | ⬜ |
+| 6 | Dashboard Administrativo | <!-- P/M/G --> | Fase 3 | ⬜ |
+| 7 | API Routes | <!-- P/M/G --> | Fase 2 | ⬜ |
+| 8 | Integrações Externas | <!-- P/M/G --> | Fase 7 | ⬜ |
+
+> Esforço: **P** (≤ 2h) · **M** (meio dia) · **G** (1 dia ou mais).
+> Status: ⬜ pendente · 🟡 em andamento · ✅ concluído.
+
+---
+
+## Riscos e Mitigações
+
+<!-- CUSTOMIZE: Liste os riscos técnicos/de negócio e como mitigá-los -->
+
+| Risco | Impacto | Probabilidade | Mitigação |
+|---|:---:|:---:|---|
+| <!-- e.g. API externa instável --> | Alto/Médio/Baixo | Alta/Média/Baixa | <!-- plano B --> |
+
+---
+
+## Plano de Execução
 
 ### Fase 1 — Inicialização do Projeto
 
-#### [NEW] Projeto e dependências
+#### [NOVO] Projeto e dependências
 
 ```bash
 # CUSTOMIZE: Adapte o comando de inicialização ao seu framework
@@ -85,7 +141,7 @@ npm install {dependências_do_projeto}
 npm install -D {dependências_dev}
 ```
 
-#### [NEW] Estrutura de diretórios
+#### [NOVO] Estrutura de diretórios
 
 <!-- CUSTOMIZE: Defina a estrutura de pastas do projeto -->
 
@@ -118,7 +174,7 @@ src/
 
 ### Fase 2 — Schema do Banco de Dados
 
-#### [NEW] `src/db/schema.ts`
+#### [NOVO] `src/db/schema.ts`
 
 <!-- CUSTOMIZE: Desenhe o modelo de dados do projeto -->
 
@@ -133,7 +189,7 @@ src/
 └─────────────────┘     └──────────────────┘
 ```
 
-#### [NEW] `src/db/seed.ts`
+#### [NOVO] `src/db/seed.ts`
 
 Seed com:
 <!-- CUSTOMIZE: Liste os dados iniciais -->
@@ -143,7 +199,7 @@ Seed com:
 
 ### Fase 3 — Autenticação e Autorização
 
-#### [NEW] Middleware / Auth
+#### [NOVO] Middleware / Auth
 
 <!-- CUSTOMIZE: Defina o sistema de autenticação e permissões -->
 
@@ -161,10 +217,10 @@ Seed com:
 
 <!-- CUSTOMIZE: Descreva as páginas e componentes da interface pública -->
 
-#### [NEW] Página principal
+#### [NOVO] Página principal
 - Descrição do que a página faz
 
-#### [NEW] Componentes
+#### [NOVO] Componentes
 - Descrição dos componentes principais
 
 ---
@@ -174,10 +230,10 @@ Seed com:
 <!-- CUSTOMIZE: Descreva o fluxo principal do projeto -->
 <!-- Exemplos: checkout de e-commerce, formulário de contato, fluxo de onboarding -->
 
-#### [NEW] Etapa 1
+#### [NOVO] Etapa 1
 - Descrição
 
-#### [NEW] Etapa 2
+#### [NOVO] Etapa 2
 - Descrição
 
 ---
@@ -186,7 +242,7 @@ Seed com:
 
 <!-- CUSTOMIZE: Descreva as páginas do painel admin -->
 
-#### [NEW] Páginas do Dashboard
+#### [NOVO] Páginas do Dashboard
 - Descrição de cada página admin
 
 ---
@@ -207,19 +263,35 @@ Seed com:
 
 <!-- CUSTOMIZE: Descreva as integrações com serviços externos -->
 
-#### [NEW] `src/lib/{integration}.ts`
+#### [NOVO] `src/lib/{integration}.ts`
 - Descrição da integração
 
 ---
 
-## Verification Plan
+## Critérios de Conclusão (Definition of Done)
 
-### Automated
+<!-- CUSTOMIZE: Critérios que precisam estar TODOS satisfeitos para considerar a entrega concluída -->
 
-1. `npx drizzle-kit push` — schema válido
+- [ ] Todas as fases dentro do escopo marcadas como ✅ no roadmap
+- [ ] Build, lint e type-check passando sem erros
+- [ ] Testes automatizados escritos e passando
+- [ ] Variáveis de ambiente documentadas no `.env.example`
+- [ ] Sem secrets commitados no repositório
+- [ ] README atualizado com as funcionalidades entregues
+- [ ] Auditoria de performance/acessibilidade dentro da meta
+- [ ] Revisão de código aprovada
+
+---
+
+## Plano de Verificação
+
+### Automatizado
+
+1. `npx drizzle-kit push` — schema válido <!-- CUSTOMIZE: ajuste ao seu ORM -->
 2. `npm run build` — TypeScript + Framework sem erros
 3. `npm run lint` — Sem problemas de lint
-4. `python .agent/scripts/checklist.py .` — Auditoria geral
+4. `npm test` — Testes unitários/integração passando <!-- CUSTOMIZE: ajuste ao seu runner -->
+5. `python .agent/scripts/checklist.py .` — Auditoria geral
 
 ### Manual
 
@@ -229,4 +301,14 @@ Seed com:
 2. **Responsividade**: Mobile, tablet, desktop
 3. **Autenticação**: Login com diferentes roles
 4. **Integrações**: Testar webhooks e APIs externas
-5. **Performance**: Lighthouse / PageSpeed audit
+
+### Qualidade e Conformidade
+
+<!-- CUSTOMIZE: Metas mensuráveis — ajuste os limites ao projeto -->
+
+| Área | Ferramenta | Meta |
+|---|---|---|
+| **Performance** | Lighthouse / PageSpeed | ≥ 90 |
+| **Acessibilidade** | Lighthouse / axe | ≥ 90 (WCAG AA) |
+| **SEO** | Lighthouse | ≥ 90 |
+| **Segurança** | Revisão de secrets, headers, validação de input | Sem findings críticos |

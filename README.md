@@ -10,12 +10,15 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)
 ![License](https://img.shields.io/badge/Licença-Privado-red)
+<!-- CUSTOMIZE: Substitua pelo badge real de CI quando houver pipeline -->
+![CI](https://img.shields.io/badge/CI-pendente-lightgrey)
 
 ---
 
 ## 📋 Índice
 
 - [🎯 Sobre o Projeto](#-sobre-o-projeto)
+- [📸 Demonstração](#-demonstração)
 - [✨ Funcionalidades](#-funcionalidades)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [📁 Estrutura do Projeto](#-estrutura-do-projeto)
@@ -25,8 +28,13 @@
 - [🗄️ Banco de Dados](#️-banco-de-dados)
 - [📡 API Routes](#-api-routes)
 - [🧩 Principais Componentes](#-principais-componentes)
+- [🧪 Testes](#-testes)
 - [🤖 Sistema de IA](#-sistema-de-ia)
 - [🌐 Deploy](#-deploy)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [🗺️ Roadmap](#️-roadmap)
+- [🤝 Contribuição](#-contribuição)
+- [📄 Licença](#-licença)
 - [📚 Referências](#-referências)
 
 ---
@@ -47,6 +55,19 @@ O **{NOME_DO_PROJETO}** é um {TIPO_DE_PROJETO} para {PÚBLICO_ALVO}, construíd
 - Diferencial 1
 - Diferencial 2
 - Diferencial 3
+
+---
+
+## 📸 Demonstração
+
+<!-- CUSTOMIZE: Adicione screenshots, GIF ou link para o ambiente de demonstração -->
+
+| | |
+|---|---|
+| 🔗 **Demo ao vivo** | <!-- https://exemplo.com --> |
+| 🎥 **Vídeo / GIF** | <!-- link ou ![demo](./docs/demo.gif) --> |
+
+> _Substitua por capturas de tela reais do projeto (`./docs/screenshot-*.png`)._
 
 ---
 
@@ -298,6 +319,29 @@ Todas as rotas da API estão em `src/app/api/`:
 
 ---
 
+## 🧪 Testes
+
+<!-- CUSTOMIZE: Descreva a estratégia de testes e os comandos do seu runner -->
+
+| Tipo | Ferramenta | Comando |
+|---|---|---|
+| Unitário | <!-- e.g. Vitest / Jest --> | `npm test` |
+| Integração | <!-- e.g. Vitest --> | `npm run test:integration` |
+| E2E | <!-- e.g. Playwright --> | `npm run test:e2e` |
+
+```bash
+# Rodar todos os testes
+npm test
+
+# Modo watch durante o desenvolvimento
+npm test -- --watch
+
+# Cobertura
+npm test -- --coverage
+```
+
+---
+
 ## 🤖 Sistema de IA
 
 Este projeto utiliza um **kit de agentes IA** na pasta `.agent/` para auxiliar no desenvolvimento. Os seguintes arquivos configuram o comportamento das IAs:
@@ -326,7 +370,10 @@ Este projeto utiliza um **kit de agentes IA** na pasta `.agent/` para auxiliar n
 
 <!-- CUSTOMIZE: Descreva o processo de deploy do seu projeto -->
 
-### Vercel (Recomendado)
+<!-- CUSTOMIZE: Vercel é só um exemplo. Documente a plataforma realmente usada -->
+<!-- (Docker, VPS, Cloudflare Pages, Railway, AWS, etc.). -->
+
+### Vercel (Exemplo)
 
 1. Conecte o repositório ao Vercel
 2. Configure as variáveis de ambiente no painel
@@ -346,6 +393,60 @@ npm run start
 | `npm run build` | 📦 Gera o build de produção |
 | `npm run start` | 🚀 Inicia o servidor de produção |
 | `npm run lint` | 🔍 Executa o ESLint |
+
+---
+
+## 🐛 Troubleshooting
+
+<!-- CUSTOMIZE: Liste os erros mais comuns de setup e como resolvê-los -->
+
+<details>
+<summary><strong>Erro ao conectar no banco de dados</strong></summary>
+
+Verifique se a `DATABASE_URL` no `.env` está correta e se o banco está acessível.
+</details>
+
+<details>
+<summary><strong>Variáveis de ambiente não carregam</strong></summary>
+
+Confirme que o arquivo é `.env` (e não `.env.example`) e reinicie o servidor de desenvolvimento.
+</details>
+
+<details>
+<summary><strong>Erro de build / TypeScript</strong></summary>
+
+Rode `npm run lint` e `npm run build` localmente para ver os erros detalhados.
+</details>
+
+---
+
+## 🗺️ Roadmap
+
+<!-- CUSTOMIZE: Liste o que está planejado. Use [x] para itens concluídos -->
+
+- [ ] Funcionalidade planejada 1
+- [ ] Funcionalidade planejada 2
+- [ ] Melhoria futura
+
+---
+
+## 🤝 Contribuição
+
+<!-- CUSTOMIZE: Ajuste ao fluxo do time (mesmo que interno) -->
+
+1. Crie uma branch a partir da `main`: `git checkout -b feat/minha-feature`
+2. Siga os padrões de código definidos em [CLAUDE.md](./CLAUDE.md) e [GEMINI.md](./GEMINI.md)
+3. Use commits semânticos (`feat:`, `fix:`, `docs:`, `refactor:`...)
+4. Garanta que `npm run lint`, `npm run build` e `npm test` passam
+5. Abra um Pull Request descrevendo a mudança
+
+---
+
+## 📄 Licença
+
+<!-- CUSTOMIZE: Defina a licença real do projeto -->
+
+Projeto **privado e proprietário**. Todos os direitos reservados. Uso, cópia ou distribuição não autorizados são proibidos.
 
 ---
 
