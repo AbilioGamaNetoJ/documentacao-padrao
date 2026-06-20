@@ -100,6 +100,10 @@ API keys for MCP servers are stored in `.env` (see [.env.example](./.env.example
 3. Preserve existing patterns (imports, naming, style)
 4. Never expose secrets in code
 
+### Before Committing
+
+Antes de qualquer commit com mudança importante (visual, arquitetural, nova feature, performance, SEO), preencha a seção `[Não lançado]` do [`CHANGELOG.md`](./CHANGELOG.md). Veja as regras completas em [`.specs/codebase/CONVENTIONS.md`](./.specs/codebase/CONVENTIONS.md#changelog).
+
 ### Never Do
 
 - Commit `.env`
@@ -108,6 +112,7 @@ API keys for MCP servers are stored in `.env` (see [.env.example](./.env.example
 - Ignore TypeScript typing
 - Expose API keys on client-side
 - Skip reading `README.md` and `.agent/` before starting work
+- Commitar mudanças importantes sem atualizar o `CHANGELOG.md`
 
 ---
 
