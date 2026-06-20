@@ -13,10 +13,17 @@ Before writing any code, the AI **MUST** complete these steps:
 
 | Step | File | Purpose |
 |---|---|---|
-| 1 | `README.md` | Understand the project, stack, and structure |
+| 1 | `README.md` | Project overview for human devs |
 | 2 | `GEMINI.md` | Global behavior rules |
 | 3 | `AGENTS.md` | Available agents and skills |
-| 4 | `.env.example` | Required environment variables |
+| 4 | `.specs/project/PROJECT.md` | Vision, goals, constraints (AI context) |
+| 5 | `.specs/project/STATE.md` | Memory: decisions, blockers, lessons |
+| 6 | `.specs/codebase/STACK.md` | Canonical tech stack |
+| 7 | `.specs/codebase/ARCHITECTURE.md` | Architecture decisions (ADR) |
+| 8 | `.specs/codebase/CONVENTIONS.md` | Code conventions |
+| 9 | `.env.example` | Required environment variables |
+
+> **IA must also check:** `.specs/codebase/CONCERNS.md` for known risks before modifying sensitive areas.
 
 ### 1.2 Understand the Request
 
@@ -306,27 +313,35 @@ A task is **only complete** when ALL of these are true:
 ## Quick Reference Card
 
 ```
-┌─────────────────────────────────────────────────┐
-│           AI IMPLEMENTATION WORKFLOW             │
-├─────────────────────────────────────────────────┤
-│                                                 │
-│  1. READ    → README.md + GEMINI.md + AGENTS.md │
-│  2. PLAN    → Clarify requirements, ask Qs      │
-│  3. READ    → All files before editing           │
-│  4. CODE    → Follow standards above             │
-│  5. TEST    → Compile + lint + build + manual    │
-│  6. VERIFY  → Definition of Done checklist       │
-│                                                 │
-│  ⚠️  NEVER: Skip reading, expose secrets,       │
-│            use `any`, write raw SQL              │
-│                                                 │
-└─────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│             AI IMPLEMENTATION WORKFLOW                 │
+├───────────────────────────────────────────────────────┤
+│                                                       │
+│  1. READ    → GEMINI.md + AGENTS.md + .specs/         │
+│  2. CHECK   → .specs/project/STATE.md (decisions,     │
+│               blockers, lessons from past sessions)    │
+│  3. PLAN    → Clarify requirements, ask Qs            │
+│  4. READ    → All files before editing                 │
+│  5. CODE    → Follow .specs/codebase/CONVENTIONS.md   │
+│  6. TEST    → Compile + lint + build + manual         │
+│  7. VERIFY  → Definition of Done checklist             │
+│  8. UPDATE  → .specs/project/STATE.md with decisions,  │
+│               lessons, and deferred ideas              │
+│                                                       │
+│  ⚠️  NEVER: Skip reading, expose secrets,             │
+│            use `any`, write raw SQL                    │
+│                                                       │
+└───────────────────────────────────────────────────────┘
 ```
 
 ---
 
 > **References:**
-> - [README.md](./README.md) — Project documentation
+> - [README.md](./README.md) — Project documentation (for human devs)
+> - [.specs/project/PROJECT.md](./.specs/project/PROJECT.md) — Vision & goals (for AI)
+> - [.specs/project/STATE.md](./.specs/project/STATE.md) — Memory: decisions, blockers, lessons
+> - [.specs/project/ROADMAP.md](./.specs/project/ROADMAP.md) — Features & milestones
+> - [.specs/codebase/](./.specs/codebase/) — Stack, architecture, conventions
 > - [AGENTS.md](./AGENTS.md) — Agent system inventory
 > - [GEMINI.md](./GEMINI.md) — Global AI rules
 > - [CLAUDE.md](./CLAUDE.md) — Claude Code instructions

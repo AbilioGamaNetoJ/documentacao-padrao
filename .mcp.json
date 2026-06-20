@@ -38,6 +38,15 @@
       "env": {
         "TAVILY_API_KEY": "${TAVILY_API_KEY}"
       }
+    },
+    "shadcn": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ],
+      "env": {}
     }
   }
 }

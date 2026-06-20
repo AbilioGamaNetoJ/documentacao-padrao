@@ -10,13 +10,13 @@
 <!-- CUSTOMIZE: Describe YOUR project below -->
 <!-- Example: This is **Project Name** — a brief description of what the project does. -->
 
-Read the [README.md](./README.md) for full details about:
+Read the [README.md](./README.md) for human-oriented project documentation.
 
-- Tech stack and framework choices
-- Folder structure and architecture
-- Database schema and ORM
-- External integrations and APIs
-- How to run the project locally
+For agent-oriented context, consult `.specs/`:
+- [.specs/project/PROJECT.md](./.specs/project/PROJECT.md) — Vision, goals, constraints
+- [.specs/project/STATE.md](./.specs/project/STATE.md) — Memory: decisions, blockers, lessons
+- [.specs/project/ROADMAP.md](./.specs/project/ROADMAP.md) — Features & milestones
+- [.specs/codebase/](./.specs/codebase/) — Stack, architecture, conventions, integrations
 
 ---
 
@@ -30,7 +30,10 @@ Before any action, read these files in order:
 | P0 | `GEMINI.md` | Global rules for all AI tools |
 | P1 | `AGENTS.md` | Agent, skill, and workflow inventory |
 | P1 | `IMPLEMENTATION_GUIDE.md` | Standard implementation workflow |
-| P2 | `README.md` | Complete project documentation |
+| P1 | `.specs/project/PROJECT.md` | Vision, goals, constraints (AI context) |
+| P1 | `.specs/project/STATE.md` | Memory: decisions, blockers, lessons |
+| P2 | `README.md` | Complete project documentation (human devs) |
+| P2 | `.specs/codebase/` | Stack, architecture, conventions |
 | P2 | `.agent/ARCHITECTURE.md` | Agent kit architecture |
 
 ---

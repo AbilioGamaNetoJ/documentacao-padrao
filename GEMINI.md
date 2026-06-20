@@ -19,7 +19,10 @@ Before writing code, answering questions, or modifying files, the AI **MUST** re
 | P0 | `CLAUDE.md` | Rules for Claude Code (points to AGENTS.md) |
 | P1 | `AGENTS.md` | Agent, skill, and workflow inventory |
 | P1 | `IMPLEMENTATION_GUIDE.md` | Standard implementation workflow |
-| P2 | `README.md` | Complete project documentation |
+| P1 | `.specs/project/PROJECT.md` | Vision, goals, constraints (AI context) |
+| P1 | `.specs/project/STATE.md` | Memory: decisions, blockers, lessons |
+| P2 | `README.md` | Complete project documentation (human devs) |
+| P2 | `.specs/codebase/` | Stack, architecture, conventions |
 | P2 | `.agent/ARCHITECTURE.md` | Agent kit architecture |
 
 ---
@@ -266,7 +269,11 @@ Before considering a task complete:
 ---
 
 > **References:**
-> - Project documentation: [README.md](./README.md)
+> - Project documentation (human devs): [README.md](./README.md)
+> - Project vision (AI context): [.specs/project/PROJECT.md](./.specs/project/PROJECT.md)
+> - Memory & state: [.specs/project/STATE.md](./.specs/project/STATE.md)
+> - Roadmap: [.specs/project/ROADMAP.md](./.specs/project/ROADMAP.md)
+> - Codebase docs: [.specs/codebase/](./.specs/codebase/)
 > - Agent system: [AGENTS.md](./AGENTS.md)
 > - Claude Code instructions: [CLAUDE.md](./CLAUDE.md)
 > - Implementation guide: [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md)

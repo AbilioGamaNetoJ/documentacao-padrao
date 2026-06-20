@@ -33,6 +33,7 @@ When starting a new project, update these sections:
 1. **Project-Specific Agents** — List the agents most relevant to YOUR project
 2. **Relevant Skills** — List skills that match your tech stack
 3. **References** — Update project name and links
+4. **.specs/** — Preencha os templates em `.specs/` com os dados do seu projeto
 
 > Everything else (complete agent list, skill list, workflows) is universal and should NOT be changed.
 
@@ -53,6 +54,55 @@ All resources are in the `.agent/` folder in the project root:
 ├── scripts/                  # Validation scripts (Python)
 └── mcp_config.json           # MCP configuration
 ```
+
+---
+
+## Project Documentation (`.specs/`)
+
+> **`.specs/` is the canonical source of truth for AI agents.**
+> `README.md` is the entry point for human developers.
+> Keep `.specs/` updated — the AI depends on it for context between sessions.
+
+```
+.specs/
+├── project/
+│   ├── PROJECT.md            # Vision, goals, constraints
+│   ├── ROADMAP.md            # Features & milestones
+│   └── STATE.md              # Memory: decisions, blockers, lessons, todos
+├── codebase/                 # Brownfield analysis (existing projects)
+│   ├── STACK.md              # Tech stack (canonical)
+│   ├── ARCHITECTURE.md       # Architecture decisions (ADR)
+│   ├── CONVENTIONS.md        # Code conventions
+│   ├── STRUCTURE.md          # Directory map
+│   ├── TESTING.md            # Testing strategy
+│   ├── INTEGRATIONS.md       # External APIs & services
+│   └── CONCERNS.md           # Tech debt, risks, fragilities
+├── features/                 # Feature specifications
+│   └── [feature]/
+│       ├── spec.md           # Requirements with traceable IDs
+│       ├── context.md        # User decisions for gray areas
+│       ├── design.md         # Architecture & components (Large/Complex only)
+│       └── tasks.md          # Atomic tasks with verification (Large/Complex only)
+└── quick/                    # Ad-hoc tasks (quick mode)
+    └── NNN-slug/
+        ├── TASK.md           # Task description & steps
+        └── SUMMARY.md        # Completion summary
+```
+
+### `.specs/` Reading Protocol (for AI)
+
+Before any task, the AI **MUST**:
+
+1. Read `.specs/project/PROJECT.md` — understand vision and constraints
+2. Read `.specs/project/STATE.md` — decisions, active blockers, lessons
+3. Check `.specs/features/` — is there an active spec for this task?
+4. Consult `.specs/codebase/` as needed (CONVENTIONS.md before coding)
+
+After completing a task, the AI **MUST**:
+
+1. Update `.specs/project/STATE.md` — new decisions, blockers resolved, lessons learned
+2. Update `.specs/project/ROADMAP.md` — feature status changes
+3. If feature work: update `.specs/features/[feature]/tasks.md`
 
 ---
 
@@ -167,7 +217,11 @@ python .agent/scripts/verify_all.py . --url http://localhost:3000
 ## References
 
 <!-- CUSTOMIZE: Update project name and links below -->
-- **Project:** [README.md](./README.md) -- Project documentation
+- **Project (human):** [README.md](./README.md) -- Project documentation for developers
+- **Project (AI):** [.specs/project/PROJECT.md](./.specs/project/PROJECT.md) -- Vision & goals
+- **Memory:** [.specs/project/STATE.md](./.specs/project/STATE.md) -- Decisions, blockers, lessons
+- **Roadmap:** [.specs/project/ROADMAP.md](./.specs/project/ROADMAP.md) -- Features & milestones
+- **Codebase:** [.specs/codebase/](./.specs/codebase/) -- Stack, architecture, conventions
 - **AI Rules:** [GEMINI.md](./GEMINI.md) -- Global rules for all AI tools
 - **Claude Code:** [CLAUDE.md](./CLAUDE.md) -- Specific instructions for Claude Code
 - **Implementation Guide:** [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md) -- Standard AI workflow

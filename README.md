@@ -462,6 +462,6 @@ Projeto **privado e proprietário**. Todos os direitos reservados. Uso, cópia o
 
 <div align="center">
 
-Feito com ❤️ para o **{NOME_DO_PROJETO}**
+Desenvolvido com precisão para **{NOME_DO_PROJETO}**
 
 </div>
