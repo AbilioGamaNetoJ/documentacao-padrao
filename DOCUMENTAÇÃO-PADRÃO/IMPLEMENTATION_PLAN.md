@@ -1,314 +1,304 @@
 # {NOME_DO_PROJETO} — Plano de Implementação
 
-<!-- Este é um template. A IA deve preencher este documento com base nas decisões do projeto. -->
-<!-- As fases abaixo são um esqueleto comum de app full-stack. Remova as que não se aplicam -->
-<!-- (ex.: sem auth, sem pagamentos) e adapte a stack à decisão do projeto. -->
-
 | Campo | Valor |
 |---|---|
-| **Status** | <!-- 🟡 Planejamento / 🔵 Em execução / 🟢 Concluído --> |
-| **Versão do plano** | <!-- e.g. v1 --> |
-| **Última atualização** | <!-- AAAA-MM-DD --> |
-| **Responsável** | <!-- nome / IA --> |
-
-## Visão Geral
-
-<!-- CUSTOMIZE: Descreva o projeto e seu contexto -->
-{DESCRIÇÃO_DO_PROJETO}: aplicação {TIPO} para {PÚBLICO_ALVO}.
-
-1. **{ÁREA_1}** — Descrição do que esta área faz
-2. **{ÁREA_2}** — Descrição do que esta área faz
+| **Status** | 🟡 Planejamento |
+| **Versão do plano** | v1 |
+| **Última atualização** | {AAAA-MM-DD} |
+| **Responsável** | {NOME_DO_RESPONSÁVEL} |
 
 ---
 
-## Escopo
+## 1. Objetivo do Projeto
+
+Descrever, de forma objetiva, o que o projeto precisa entregar, para quem e qual problema resolve.
+
+**Resumo executivo**
+- Tipo de solução: {site institucional / catálogo / landing page / portal / dashboard / sistema interno / app web / outro}
+- Público principal: {público-alvo}
+- Objetivo principal: {objetivo de negócio}
+- Resultado esperado: {o que precisa estar funcionando ao final}
+
+---
+
+## 2. Contexto e Restrições
+
+Registrar os limites que orientam as decisões técnicas e evitam expansão indevida de escopo.
+
+### Restrições de negócio
+- Orçamento: {faixa ou limite}
+- Prazo: {data ou janela}
+- Equipe disponível: {papéis e capacidade}
+- Prioridade principal: {velocidade / baixo custo / escalabilidade / design / operação simples / outro}
+
+### Restrições técnicas
+- Plataformas-alvo: {web / mobile web / desktop / interno}
+- Dependências obrigatórias: {se houver}
+- Dependências proibidas: {se houver}
+- Integrações já aprovadas: {somente o que estiver confirmado}
+- Integrações ainda não aprovadas: {deixar explícito}
+
+### Restrições operacionais
+- Quem atualizará conteúdo após entrega: {cliente / time interno / terceiro}
+- Nível de autonomia esperado do cliente: {baixo / médio / alto}
+- Necessidade de documentação: {sim / não}
+- Necessidade de treinamento: {sim / não}
+
+---
+
+## 3. Escopo
 
 ### ✅ Dentro do escopo
-
-<!-- CUSTOMIZE: Liste objetivamente o que SERÁ entregue -->
-- Item 1
-- Item 2
+- {item 1}
+- {item 2}
+- {item 3}
 
 ### 🚫 Fora do escopo
+- {item fora do escopo 1}
+- {item fora do escopo 2}
+- {item fora do escopo 3}
 
-<!-- CUSTOMIZE: Liste o que NÃO será feito agora — evita scope creep -->
-- Item que ficará para depois
-- Item que não faz parte desta entrega
-
----
-
-## Decisões Confirmadas
-
-<!-- CUSTOMIZE: Preencha com as decisões técnicas do projeto -->
-
-| Decisão | Resposta |
-|---|---|
-| **Framework** | <!-- e.g. Next.js 16 (App Router) --> |
-| **Styling** | <!-- e.g. Tailwind CSS v4 + shadcn/ui --> |
-| **Database** | <!-- e.g. Neon PostgreSQL + Drizzle ORM --> |
-| **Auth** | <!-- e.g. Clerk (redirect + webhook sync) --> |
-| **Pagamentos** | <!-- e.g. Asaas (redirect) / Stripe / N/A --> |
-| **Upload** | <!-- e.g. UploadThing / Cloudinary / N/A --> |
-| **Frete/Maps** | <!-- e.g. Google Routes API / N/A --> |
-| **State** | <!-- e.g. Zustand + localStorage --> |
-| **Deploy** | <!-- e.g. Vercel --> |
-
-> [!IMPORTANT]
-> **Chaves de API necessárias** (adicione no `.env`, veja `.env.example`):
-> <!-- CUSTOMIZE: Liste todas as chaves de API necessárias -->
-> - `DATABASE_URL` — Connection string do banco
-> - `CLERK_SECRET_KEY` — Autenticação
-> - ... (adicione conforme necessário)
+> Regra: tudo que não estiver explicitamente listado como “dentro do escopo” deve ser tratado como fora do escopo até nova aprovação.
 
 ---
 
-## Categorias / Entidades Principais
+## 4. Requisitos Funcionais
 
-<!-- CUSTOMIZE: Liste as entidades/categorias do domínio do projeto -->
+Listar o que a solução deve fazer, sem assumir tecnologia.
 
-| # | Nome | Tipo |
+| ID | Requisito | Prioridade |
 |---|---|---|
-| 1 | <!-- entidade --> | <!-- tipo --> |
-| 2 | <!-- entidade --> | <!-- tipo --> |
+| RF-01 | {descrição do comportamento esperado} | Alta |
+| RF-02 | {descrição do comportamento esperado} | Alta |
+| RF-03 | {descrição do comportamento esperado} | Média |
 
 ---
 
-## Stack Técnica
+## 5. Requisitos Não Funcionais
 
-<!-- CUSTOMIZE: Preencha com as tecnologias escolhidas -->
+Listar atributos de qualidade e restrições arquiteturais.
 
-| Camada | Tecnologia |
+| ID | Requisito | Meta |
+|---|---|---|
+| RNF-01 | Performance | {meta} |
+| RNF-02 | Responsividade | {meta} |
+| RNF-03 | Acessibilidade | {meta} |
+| RNF-04 | SEO | {meta, se aplicável} |
+| RNF-05 | Segurança | {meta} |
+| RNF-06 | Manutenibilidade | {meta} |
+
+---
+
+## 6. Entidades / Blocos de Conteúdo / Domínios
+
+Descrever os principais elementos do projeto sem presumir banco de dados ou estrutura interna específica.
+
+| # | Nome | Descrição | Obrigatório |
+|---|---|---|---|
+| 1 | {entidade ou bloco} | {o que representa} | Sim |
+| 2 | {entidade ou bloco} | {o que representa} | Sim |
+| 3 | {entidade ou bloco} | {o que representa} | Não |
+
+---
+
+## 7. Arquitetura Proposta
+
+Descrever a arquitetura em nível lógico, não como lista automática de ferramentas.
+
+### Tipo de arquitetura
+{Ex.: site estático com conteúdo gerenciável / aplicação web com área pública e área restrita / portal com integrações externas / outro}
+
+### Componentes principais
+- Interface do usuário
+- Camada de conteúdo ou dados
+- Camada de integrações
+- Camada de publicação/deploy
+- Camada de observabilidade, se necessária
+
+### Fluxo principal do usuário
+1. {etapa 1}
+2. {etapa 2}
+3. {etapa 3}
+4. {etapa 4}
+
+### Observações arquiteturais
+- Escolher tecnologias apenas quando houver justificativa funcional, operacional ou financeira.
+- Não introduzir componentes que não estejam claramente relacionados aos requisitos.
+- Evitar complexidade estrutural não compatível com o orçamento, prazo e maturidade operacional do projeto.
+
+---
+
+## 8. Decisões Confirmadas
+
+Preencher apenas com decisões já tomadas. Se algo ainda não estiver decidido, marcar como `A definir`.
+
+| Tema | Decisão |
 |---|---|
-| Framework | <!-- e.g. Next.js 16 (App Router + Turbopack) --> |
-| Linguagem | <!-- e.g. TypeScript 5 --> |
-| UI | <!-- e.g. shadcn/ui + Tailwind CSS v4 --> |
-| Autenticação | <!-- e.g. Clerk --> |
-| Banco de dados | <!-- e.g. Neon PostgreSQL --> |
-| ORM | <!-- e.g. Drizzle ORM --> |
-| Pagamentos | <!-- e.g. Asaas / Stripe --> |
-| Upload | <!-- e.g. UploadThing --> |
-| Estado local | <!-- e.g. Zustand --> |
-| Deploy | <!-- e.g. Vercel --> |
+| Framework / Base de desenvolvimento | {A definir ou tecnologia aprovada} |
+| Linguagem | {A definir ou tecnologia aprovada} |
+| Estilização / UI | {A definir ou tecnologia aprovada} |
+| Gestão de conteúdo | {A definir ou tecnologia aprovada} |
+| Persistência de dados | {A definir ou N/A} |
+| Autenticação | {A definir ou N/A} |
+| Pagamentos | {A definir ou N/A} |
+| Upload de arquivos | {A definir ou N/A} |
+| Integrações externas | {A definir ou listar somente as aprovadas} |
+| Deploy / Hospedagem | {A definir ou tecnologia aprovada} |
+| Analytics | {A definir ou N/A} |
+
+> Importante: não escolher ORM, gateway de pagamento, banco, auth provider, fila, cache ou serviços externos sem requisito explícito e decisão registrada.
 
 ---
 
-## Roadmap de Fases
+## 9. Variáveis e Configurações
 
-<!-- CUSTOMIZE: Marque o progresso, ajuste a ordem e remova fases que não se aplicam. -->
-<!-- A coluna "Depende de" deixa explícita a ordem de execução. -->
+Listar apenas configurações realmente necessárias ao projeto.
 
-| # | Fase | Esforço | Depende de | Status |
+| Chave | Obrigatória | Descrição |
+|---|---|---|
+| `{CHAVE_1}` | Sim | {descrição} |
+| `{CHAVE_2}` | Não | {descrição} |
+
+> Não inventar variáveis para serviços ainda não aprovados.
+
+---
+
+## 10. Fases de Implementação
+
+Organizar a execução por fases reutilizáveis em qualquer projeto.
+
+| # | Fase | Objetivo | Dependências | Status |
 |---|---|---|---|:---:|
-| 1 | Inicialização do Projeto | <!-- P/M/G --> | — | ⬜ |
-| 2 | Schema do Banco de Dados | <!-- P/M/G --> | Fase 1 | ⬜ |
-| 3 | Autenticação e Autorização | <!-- P/M/G --> | Fase 2 | ⬜ |
-| 4 | Interface Pública | <!-- P/M/G --> | Fase 2 | ⬜ |
-| 5 | Fluxo Principal | <!-- P/M/G --> | Fase 3, 4 | ⬜ |
-| 6 | Dashboard Administrativo | <!-- P/M/G --> | Fase 3 | ⬜ |
-| 7 | API Routes | <!-- P/M/G --> | Fase 2 | ⬜ |
-| 8 | Integrações Externas | <!-- P/M/G --> | Fase 7 | ⬜ |
-
-> Esforço: **P** (≤ 2h) · **M** (meio dia) · **G** (1 dia ou mais).
-> Status: ⬜ pendente · 🟡 em andamento · ✅ concluído.
+| 1 | Descoberta e detalhamento | Consolidar requisitos, escopo e restrições | — | ⬜ |
+| 2 | Arquitetura e modelagem | Estruturar a solução e os blocos principais | Fase 1 | ⬜ |
+| 3 | Setup do projeto | Preparar base técnica e organização inicial | Fase 2 | ⬜ |
+| 4 | Implementação da interface | Construir telas, páginas e componentes | Fase 3 | ⬜ |
+| 5 | Implementação do fluxo principal | Construir a jornada central do usuário | Fase 4 | ⬜ |
+| 6 | Conteúdo / dados iniciais | Preparar cadastros, textos e ativos iniciais | Fase 4 | ⬜ |
+| 7 | Integrações aprovadas | Implementar apenas integrações confirmadas | Fase 5 | ⬜ |
+| 8 | Qualidade e conformidade | Validar testes, SEO, acessibilidade, segurança | Fase 6, 7 | ⬜ |
+| 9 | Deploy e publicação | Publicar e validar ambiente final | Fase 8 | ⬜ |
 
 ---
 
-## Riscos e Mitigações
+## 11. Entregáveis por Fase
 
-<!-- CUSTOMIZE: Liste os riscos técnicos/de negócio e como mitigá-los -->
+### Fase 1 — Descoberta e detalhamento
+- Escopo revisado
+- Requisitos funcionais e não funcionais definidos
+- Restrições documentadas
+
+### Fase 2 — Arquitetura e modelagem
+- Arquitetura lógica definida
+- Entidades / blocos principais mapeados
+- Decisões confirmadas registradas
+
+### Fase 3 — Setup do projeto
+- Repositório estruturado
+- Convenções definidas
+- Ambiente inicial preparado
+
+### Fase 4 — Implementação da interface
+- Páginas principais
+- Componentes reutilizáveis
+- Responsividade base
+
+### Fase 5 — Fluxo principal
+- Jornada principal funcionando
+- Estados de erro e vazio tratados
+- Instrumentação mínima, se aprovada
+
+### Fase 6 — Conteúdo / dados iniciais
+- Conteúdo inicial publicado
+- Revisão visual e textual
+- Ativos organizados
+
+### Fase 7 — Integrações aprovadas
+- Integrações implementadas
+- Tratamento de falhas definido
+- Configurações documentadas
+
+### Fase 8 — Qualidade e conformidade
+- Build estável
+- Revisões de qualidade concluídas
+- Checklist de conformidade executado
+
+### Fase 9 — Deploy e publicação
+- Ambiente final publicado
+- Verificação pós-publicação concluída
+- Handover realizado
+
+---
+
+## 12. Riscos e Mitigações
 
 | Risco | Impacto | Probabilidade | Mitigação |
 |---|:---:|:---:|---|
-| <!-- e.g. API externa instável --> | Alto/Médio/Baixo | Alta/Média/Baixa | <!-- plano B --> |
+| {risco 1} | Alto/Médio/Baixo | Alta/Média/Baixa | {mitigação} |
+| {risco 2} | Alto/Médio/Baixo | Alta/Média/Baixa | {mitigação} |
 
 ---
 
-## Plano de Execução
+## 13. Decisões Arquiteturais Relevantes
 
-### Fase 1 — Inicialização do Projeto
+Registrar apenas decisões significativas, com contexto e consequência, em linha com a prática de ADR. [web:48][web:51][web:57][web:60]
 
-#### [NOVO] Projeto e dependências
-
-```bash
-# CUSTOMIZE: Adapte o comando de inicialização ao seu framework
-npx -y create-next-app@latest ./ --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --turbopack
-```
-
-Dependências:
-```bash
-# CUSTOMIZE: Liste as dependências do seu projeto
-npm install {dependências_do_projeto}
-npm install -D {dependências_dev}
-```
-
-#### [NOVO] Estrutura de diretórios
-
-<!-- CUSTOMIZE: Defina a estrutura de pastas do projeto -->
-
-```
-src/
-├── app/
-│   ├── (public)/              # Rotas públicas
-│   ├── (dashboard)/           # Rotas admin (auth required)
-│   ├── api/                   # API Routes
-│   │   ├── webhooks/          # Webhooks
-│   │   └── ...                # Outros endpoints
-│   ├── sign-in/               # Login
-│   ├── sign-up/               # Cadastro
-│   ├── layout.tsx
-│   └── globals.css
-├── components/
-│   ├── ui/                    # shadcn/ui
-│   ├── {area1}/               # Componentes da área 1
-│   └── shared/                # Componentes compartilhados
-├── db/
-│   ├── index.ts               # Conexão
-│   ├── schema.ts              # Tabelas
-│   └── seed.ts                # Seed
-├── lib/                       # Utilitários e integrações
-├── stores/                    # State management
-└── types/                     # Tipos TypeScript
-```
+### ADR-001 — {Título da decisão}
+- **Status:** Proposta / Aprovada / Rejeitada / Substituída
+- **Contexto:** {qual problema levou à decisão}
+- **Alternativas consideradas:** {opções consideradas}
+- **Decisão:** {o que foi decidido}
+- **Consequências:** {impactos positivos, riscos residuais e trade-offs}
 
 ---
 
-### Fase 2 — Schema do Banco de Dados
+## 14. Critérios de Conclusão (Definition of Done)
 
-#### [NOVO] `src/db/schema.ts`
-
-<!-- CUSTOMIZE: Desenhe o modelo de dados do projeto -->
-
-```
-┌─────────────────┐     ┌──────────────────┐
-│   table_1       │     │    table_2        │
-├─────────────────┤     ├──────────────────┤
-│ id (uuid PK)    │◄────│ table_1_id (FK)  │
-│ name            │     │ id (uuid PK)     │
-│ created_at      │     │ ...              │
-│ updated_at      │     │ created_at       │
-└─────────────────┘     └──────────────────┘
-```
-
-#### [NOVO] `src/db/seed.ts`
-
-Seed com:
-<!-- CUSTOMIZE: Liste os dados iniciais -->
-- Dados iniciais (categorias, configurações, etc.)
+- [ ] Escopo implementado conforme definição aprovada
+- [ ] Itens fora de escopo não foram incluídos sem autorização
+- [ ] Build e validações principais executadas sem erro
+- [ ] Configurações documentadas
+- [ ] Conteúdo inicial validado
+- [ ] Responsividade revisada
+- [ ] Critérios de qualidade atendidos
+- [ ] Publicação concluída
+- [ ] Documentação mínima entregue
 
 ---
 
-### Fase 3 — Autenticação e Autorização
+## 15. Plano de Verificação
 
-#### [NOVO] Middleware / Auth
+### Verificação automatizada
+1. Build do projeto sem erros
+2. Lint sem erros críticos
+3. Type-check, se aplicável
+4. Testes automatizados, se previstos no escopo
+5. Verificações de qualidade configuradas para o projeto
 
-<!-- CUSTOMIZE: Defina o sistema de autenticação e permissões -->
+### Verificação manual
+1. Validar fluxo principal do usuário
+2. Validar interface em mobile, tablet e desktop
+3. Validar conteúdo, links e estados de erro
+4. Validar integrações aprovadas
+5. Validar requisitos não funcionais prioritários
 
-- Rotas protegidas: `/dashboard/*`
-- Roles e permissões:
+### Qualidade e conformidade
 
-| Funcionalidade | Admin | User |
-|---|:---:|:---:|
-| Dashboard | ✅ | ❌ |
-| Conteúdo | ✅ | ❌ |
-
----
-
-### Fase 4 — Interface Pública
-
-<!-- CUSTOMIZE: Descreva as páginas e componentes da interface pública -->
-
-#### [NOVO] Página principal
-- Descrição do que a página faz
-
-#### [NOVO] Componentes
-- Descrição dos componentes principais
-
----
-
-### Fase 5 — Fluxo Principal (Checkout / Formulário / etc.)
-
-<!-- CUSTOMIZE: Descreva o fluxo principal do projeto -->
-<!-- Exemplos: checkout de e-commerce, formulário de contato, fluxo de onboarding -->
-
-#### [NOVO] Etapa 1
-- Descrição
-
-#### [NOVO] Etapa 2
-- Descrição
+| Área | Meta |
+|---|---|
+| Performance | {meta} |
+| Acessibilidade | {meta} |
+| SEO | {meta ou N/A} |
+| Segurança | {meta} |
+| Operação / manutenção | {meta} |
 
 ---
 
-### Fase 6 — Dashboard Administrativo
+## 16. Instruções para a IA
 
-<!-- CUSTOMIZE: Descreva as páginas do painel admin -->
-
-#### [NOVO] Páginas do Dashboard
-- Descrição de cada página admin
-
----
-
-### Fase 7 — API Routes
-
-<!-- CUSTOMIZE: Liste os endpoints da API -->
-
-| Endpoint | Métodos | Auth |
-|---|---|---|
-| `/api/resource` | GET, POST | Público / Auth |
-| `/api/resource/[id]` | GET, PATCH, DELETE | Auth |
-| `/api/webhooks/provider` | POST | Webhook secret |
-
----
-
-### Fase 8 — Integrações Externas
-
-<!-- CUSTOMIZE: Descreva as integrações com serviços externos -->
-
-#### [NOVO] `src/lib/{integration}.ts`
-- Descrição da integração
-
----
-
-## Critérios de Conclusão (Definition of Done)
-
-<!-- CUSTOMIZE: Critérios que precisam estar TODOS satisfeitos para considerar a entrega concluída -->
-
-- [ ] Todas as fases dentro do escopo marcadas como ✅ no roadmap
-- [ ] Build, lint e type-check passando sem erros
-- [ ] Testes automatizados escritos e passando
-- [ ] Variáveis de ambiente documentadas no `.env.example`
-- [ ] Sem secrets commitados no repositório
-- [ ] README atualizado com as funcionalidades entregues
-- [ ] Auditoria de performance/acessibilidade dentro da meta
-- [ ] Revisão de código aprovada
-
----
-
-## Plano de Verificação
-
-### Automatizado
-
-1. `npx drizzle-kit push` — schema válido <!-- CUSTOMIZE: ajuste ao seu ORM -->
-2. `npm run build` — TypeScript + Framework sem erros
-3. `npm run lint` — Sem problemas de lint
-4. `npm test` — Testes unitários/integração passando <!-- CUSTOMIZE: ajuste ao seu runner -->
-5. `python .agent/scripts/checklist.py .` — Auditoria geral
-
-### Manual
-
-<!-- CUSTOMIZE: Liste os testes manuais necessários -->
-
-1. **Fluxo principal**: Testar o fluxo completo do usuário
-2. **Responsividade**: Mobile, tablet, desktop
-3. **Autenticação**: Login com diferentes roles
-4. **Integrações**: Testar webhooks e APIs externas
-
-### Qualidade e Conformidade
-
-<!-- CUSTOMIZE: Metas mensuráveis — ajuste os limites ao projeto -->
-
-| Área | Ferramenta | Meta |
-|---|---|---|
-| **Performance** | Lighthouse / PageSpeed | ≥ 90 |
-| **Acessibilidade** | Lighthouse / axe | ≥ 90 (WCAG AA) |
-| **SEO** | Lighthouse | ≥ 90 |
-| **Segurança** | Revisão de secrets, headers, validação de input | Sem findings críticos |
+- Não assumir tecnologias que não estejam explicitamente aprovadas.
+- Não introduzir ORM, banco relacional, gateway de pagamento, autenticação, filas, cache, painel administrativo ou integrações externas sem requisito explícito.
+- Quando uma decisão não estiver definida, marcar como `A definir` em vez de inventar.
+- Priorizar soluções compatíveis com o orçamento, prazo, escopo e capacidade operacional do projeto.
+- Preferir simplicidade arquitetural quando múltiplas opções atenderem ao mesmo requisito.
+- Explicitar riscos, trade-offs e dependências antes de propor componentes adicionais.
